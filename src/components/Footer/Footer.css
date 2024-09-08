@@ -7,6 +7,7 @@
 
 .footer__container {
   width: 60%;
+  margin-top: 48px;
 }
 
 .footer__icons {
@@ -18,7 +19,7 @@
 .footer__nav {
   display: flex;
   justify-content: space-between;
-  margin: 16px 0;
+  margin: 5px 0;
 }
 
 .footer__nav ul {
@@ -26,7 +27,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  height: 24vh;
+  height: 7rem;
 }
 
 .footer__nav ul li {
