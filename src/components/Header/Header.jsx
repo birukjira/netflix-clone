@@ -17,7 +17,7 @@ function Header() {
             <li>TVShows</li>
             <li>Movies</li>
             <li>Latest</li>
-            <li>MyLis</li>
+            <li>MyList</li>
             <li>Browse by Languages</li>
           </ul>
         </div>
