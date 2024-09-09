@@ -104,6 +104,7 @@
   }
 
   .banner__description {
+    display: none;
     width: 100%;
     font-size: 1rem;
     max-width: 300px;
@@ -136,6 +137,7 @@
   }
 
   .banner__description {
+    display: none;
     font-size: 0.9rem;
     max-width: 250px;
   }
