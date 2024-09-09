@@ -30,5 +30,10 @@
 
 .row {
   margin-left: 20px;
+
   color: #fff;
+}
+.row h3 {
+  font-weight: 400;
+  margin-left: 20px;
 }
