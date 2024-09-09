@@ -1,3 +1,4 @@
+/* Base Footer Styles */
 .footer {
   background-color: #111;
   color: gray;
@@ -7,7 +8,7 @@
 
 .footer__container {
   width: 60%;
-  margin-top: 48px;
+  margin: 48px 0;
 }
 
 .footer__icons {
@@ -16,6 +17,7 @@
   margin: 10px 0;
   color: #fff;
 }
+
 .footer__nav {
   display: flex;
   justify-content: space-between;
@@ -47,4 +49,62 @@
 .footer__copyWrite {
   font-size: 12px;
   margin-bottom: 10px;
+}
+
+/* Responsive Styles */
+
+/* For tablets and smaller screens */
+@media (max-width: 768px) {
+  .footer__container {
+    width: 80%;
+  }
+
+  .footer__nav {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer__nav ul {
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px;
+    height: auto;
+  }
+
+  .footer__serviceCode {
+    width: 25vw;
+  }
+
+  .footer__icons {
+    justify-content: center;
+    gap: 15px;
+  }
+}
+
+/* For mobile screens */
+@media (max-width: 480px) {
+  .footer__container {
+    width: 90%;
+  }
+
+  .footer__nav ul {
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 10px;
+  }
+
+  .footer__serviceCode {
+    width: 50vw;
+    font-size: 10px;
+  }
+
+  .footer__copyWrite {
+    font-size: 10px;
+    text-align: center;
+  }
+
+  .footer__icons {
+    gap: 10px;
+  }
 }
