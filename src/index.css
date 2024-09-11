@@ -17,4 +17,5 @@ body::-webkit-scrollbar {
 body {
   background: #111;
   font-family: "Inter", sans-serif;
+  /* font-family: var(); */
 }

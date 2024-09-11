@@ -21,7 +21,7 @@ function RowList() {
   return (
     <>
       <Row
-        title="Netflix Original"
+        title="Netflix Originals"
         fetchUrl={requests.fetchNetflixOriginals}
         isLargeRow={true}
         trailerUrl={trailerUrl}

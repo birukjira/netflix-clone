@@ -23,14 +23,13 @@ function Row({
       try {
         const request = await axios.get(fetchUrl);
         setMovies(request.data.results);
-        // console.log(request.data.results);
+        console.log(request.data.results);
       } catch (error) {
         console.error("Failed to fetch data:", error);
       }
     }
     fetchData();
   }, [fetchUrl]);
-
   const handleClick = (movie) => {
     // If a trailer is already playing and clicked again, close it
     if (
@@ -63,26 +62,23 @@ function Row({
       autoplay: 1,
     },
   };
-  // console.log(movie.id);
-
+  //
   return (
     <div className="row">
       <h3>{title}</h3>
-      {/* console.log(movie); */}
       <div className="row__posters">
-        {movies.map((movie) => (
-          <img
-            key={movie.id}
-            onClick={() => handleClick(movie)}
-            className={`row__poster ${isLargeRow && "row__posterLarge"}`}
-            src={
-              movie?.poster_path || movie?.backdrop_path
-                ? `${base_url}${isLargeRow ? movie?.poster_path : movie?.backdrop_path}`
-                : `${base_url}/default-image-path.jpg` // Add a fallback image here
-            }
-            alt={movie.title || movie.name}
-          />
-        ))}
+        {movies.map((movie) => {
+          const imageSrc = isLargeRow ? movie.poster_path : movie.backdrop_path;
+          return imageSrc ? (
+            <img
+              onClick={() => handleClick(movie)}
+              key={movie.id}
+              className={`row__poster ${isLargeRow && "row__posterLarge"}`}
+              src={`${base_url}${imageSrc}`}
+              alt={movie?.title || movie?.name || movie?.original_name}
+            />
+          ) : null;
+        })}
       </div>
       <div style={{ padding: "20px" }}>
         {/* Only show trailer if this row is active */}
