@@ -1,0 +1,6 @@
+# Force correct MIME types for Vite and modern JavaScript
+
+<IfModule mod_mime.c>
+  AddType application/javascript .js
+  AddType text/css .css
+</IfModule>
