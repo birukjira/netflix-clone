@@ -16,7 +16,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: "18.x" # Specify Node.js version
+          node-version: "20.x" # Specify Node.js version
 
       - name: Install dependencies
         run: npm install
@@ -33,4 +33,4 @@ jobs:
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: dist # Deploy the dist folder created by Vite
-          server-dir: /public_html/vite_app # Directory on the server (adjust to your setup)
+          server-dir: /public_html # Directory on the server (adjust to your setup)
