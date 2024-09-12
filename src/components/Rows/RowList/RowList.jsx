@@ -4,9 +4,10 @@ import Row from "../Row/Row";
 import requests from "../../../utils/requests";
 
 function RowList() {
-  const [trailerUrl, setTrailerUrl] = useState("");
-  const [activeRow, setActiveRow] = useState(null); // Track which row is active
+  const [trailerUrl, setTrailerUrl] = useState(""); // stores the URL of a movie trailer, allowing a trailer to play when a row is clicked
+  const [activeRow, setActiveRow] = useState(null); // keeps track of which row is currently active
 
+  //it is function that controls what happens when a row is clicked
   const handleSetTrailer = (url, rowId) => {
     if (activeRow === rowId && trailerUrl === url) {
       // Close the trailer if the same row is clicked again
@@ -18,6 +19,7 @@ function RowList() {
       setActiveRow(rowId);
     }
   };
+
   return (
     <>
       <Row

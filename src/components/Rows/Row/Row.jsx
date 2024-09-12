@@ -10,14 +10,15 @@ function Row({
   title,
   fetchUrl,
   isLargeRow,
-  trailerUrl,
-  activeRow,
-  rowId,
-  onSetTrailer,
+  trailerUrl, //to manage the state of which trailer is currently playing and which row is active
+  activeRow, //to manage the state of which trailer is currently playing and which row is active
+  rowId, //to manage the state of which trailer is currently playing and which row is active
+  onSetTrailer, //to control trailer URL and active row state in the parent component.
 }) {
   const [movies, setMovies] = useState([]);
   const [movieTrailerUrl, setMovieTrailerUrl] = useState(""); // Local state for this row's movie trailer
 
+  //Fetching Movies using useEffect
   useEffect(() => {
     async function fetchData() {
       try {
@@ -30,6 +31,8 @@ function Row({
     }
     fetchData();
   }, [fetchUrl]);
+
+  //a function that when a user clicks on a movie poster, this function is called to handle
   const handleClick = (movie) => {
     // If a trailer is already playing and clicked again, close it
     if (
