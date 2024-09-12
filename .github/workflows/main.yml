@@ -33,4 +33,4 @@ jobs:
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: dist/ # Deploy the dist folder created by Vite
-          server-dir: /public_html/netflix-clone/ # Directory on the server (adjust to your setup)
+          server-dir: /public_html/ # Directory on the server (adjust to your setup)
