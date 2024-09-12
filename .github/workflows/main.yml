@@ -1,21 +1,36 @@
-name: nefix website deploy with git.
+name: Deploy Vite App to cPanel
 
 on:
   push:
     branches:
-      - main
+      - main # Trigger deployment on push to main branch
 
 jobs:
-  FTP-deploy:
-    name: FTP-Deploy
+  build:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Get latest code
+      - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Sync files
-        uses: SamKirkland/FTP-Deploy-Action@4.3.0
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: "18.x" # Specify Node.js version
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build Vite app with environment variables
+        run: |
+          echo "VITE_TMDB_API_KEY=${{ secrets.VITE_TMDB_API_KEY }}" >> .env
+          npm run build
+
+      - name: Deploy to cPanel via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.0
         with:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: dist # Deploy the dist folder created by Vite
+          server-dir: /public_html/vite_app # Directory on the server (adjust to your setup)
