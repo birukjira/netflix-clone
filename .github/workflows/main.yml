@@ -32,5 +32,5 @@ jobs:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: dist # Deploy the dist folder created by Vite
+          local-dir: dist/ # Deploy the dist folder created by Vite
           server-dir: /public_html # Directory on the server (adjust to your setup)
