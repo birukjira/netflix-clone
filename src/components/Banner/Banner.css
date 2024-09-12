@@ -1,7 +1,7 @@
 /* Base Banner Styles */
 .banner {
   margin-top: -10vh;
-  height: 80vh;
+  height: 95vh;
   margin-bottom: -80px;
   color: #fff;
   object-fit: contain;
@@ -13,7 +13,7 @@
 
 .banner__contents {
   margin-left: 40px;
-  padding-top: 300px;
+  padding-top: 150px;
 }
 
 .banner__title {
@@ -98,7 +98,7 @@
 /* Responsive Styles */
 
 /* For tablets and smaller screens */
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
   .banner__title {
     font-size: 3.5rem;
   }
@@ -128,10 +128,10 @@
   .banner__fadeBottom {
     height: 30vh;
   }
-}
+} */
 
 /* For mobile screens */
-@media (max-width: 480px) {
+/* @media (max-width: 480px) {
   .banner__title {
     font-size: 2rem;
   }
@@ -159,4 +159,4 @@
   .banner__fadeBottom {
     height: 25vh;
   }
-}
+} */
