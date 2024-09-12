@@ -23,7 +23,7 @@ function Row({
       try {
         const request = await axios.get(fetchUrl);
         setMovies(request.data.results);
-        console.log(request.data.results);
+        // console.log(request.data.results);
       } catch (error) {
         console.error("Failed to fetch data:", error);
       }
@@ -51,7 +51,7 @@ function Row({
             console.error("No trailer found for this movie");
           }
         })
-        .catch((error) => console.log("Trailer fetching error:", error));
+        .catch((error) => console.error("Trailer fetching error:", error));
     }
   };
 
