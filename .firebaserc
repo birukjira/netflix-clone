@@ -1,5 +1,9 @@
 {
   "projects": {
-    "default": "netflix-clone-e8bbb"
-  }
+    "default": "biruk-netflix-clone-32aee"
+    
+  },
+  "targets": {},
+  "etags": {},
+  "dataconnectEmulatorConfig": {}
 }
